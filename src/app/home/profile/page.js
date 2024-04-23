@@ -12,14 +12,12 @@ import { useSession } from "next-auth/react";
 
 export default function Profile() {
     const router = useRouter();
-    const [customer, setCustomer] = useState({});
+    const [cliente, setCliente] = useState({});
     const [preloadedValues, setPreloadedValues] = useState({
         email: "" ,
         first_name: "" ,
         last_name: "" ,
         address1: "" ,
-        address2: "" ,
-        address3: "" ,
         city: "" ,
         state: "" ,
         cep: "" ,
@@ -45,24 +43,24 @@ export default function Profile() {
 
 
     useEffect(() => {
-        api.get('/customers')
+        api.get('/clientes')
             .then(response => {
-                let customer = response.data;
-                if (customer) {
+                let cliente = response.data;
+                if (cliente) {
                     setPreloadedValues({
                         email: session?.user?.email,
                         first_name: session?.user?.first_name,
                         last_name: session?.user?.last_name,
-                        address1: customer?.address1 || "",
-                        address2: customer?.address2 || "",
-                        address3: customer?.address3 || "",
-                        city: customer?.city || "",
-                        state: customer?.state || "",
-                        cep: customer?.cep || "",
-                        phone: customer?.phone || "",
+                        address1: cliente?.address1 || "",
+                        address2: cliente?.address2 || "",
+                        address3: cliente?.address3 || "",
+                        city: cliente?.city || "",
+                        state: cliente?.state || "",
+                        cep: cliente?.cep || "",
+                        phone: cliente?.phone || "",
                     });
                 }
-                setCustomer(customer);
+                setCliente(cliente);
             });
     }, []);
 
@@ -81,9 +79,6 @@ export default function Profile() {
                         .required("CEP é obrigatório"),
         address1:   yup.string()
                         .required("Endereço é obrigatório"),
-        address2:   yup.string()
-                        .required("Bairro é obrigatório"),
-        address3:   yup.string(),
         city:       yup.string()
                         .required("Cidade é obrigatório"),
         state:      yup.string()
@@ -123,9 +118,9 @@ export default function Profile() {
     };
 
     const onSubmit = async (data) => {
-        data = {...data, id: customer.id};
+        data = {...data, id: cliente.id};
         console.log(data);
-        api.put('/customers', data)
+        api.put('/clientes', data)
             .then((response) => {
                 toast.success('Perfil atualizado com sucesso.');
                 router.replace('/home');
@@ -271,47 +266,7 @@ export default function Profile() {
                                             />
                                         </div>
                                         {errors.address1 && <p className="mt-2 text-sm text-red-600" id="address1-error">{errors.address1.message}</p>}
-                                    </div>
-
-
-                                    <div className="col-span-3">
-                                        <label
-                                            htmlFor="address2"
-                                            className="block text-sm font-medium leading-6 text-gray-900"
-                                        >
-                                            Bairro
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                {...register("address2")}
-                                                type="text"
-                                                id="address2"
-                                                autoComplete="address2"
-                                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            />
-                                        </div>
-                                        {errors.address2 && <p className="mt-2 text-sm text-red-600" id="address2-error">{errors.address2.message}</p>}
-                                    </div>
-
-                                    <div className="col-span-3">
-                                        <label
-                                            htmlFor="address3"
-                                            className="block text-sm font-medium leading-6 text-gray-900"
-                                        >
-                                            Complemento
-                                        </label>
-                                        <div className="mt-2">
-                                            <input
-                                                {...register("address3")}
-                                                type="text"
-                                                id="address3"
-                                                autoComplete="address3"
-                                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            />
-                                        </div>
-                                        {errors.address3 && <p className="mt-2 text-sm text-red-600" id="address3-error">{errors.address3.message}</p>}
-                                    </div>
-
+                                    </div>                                   
 
                                     <div className="sm:col-span-4 sm:col-start-1">
                                         <label
