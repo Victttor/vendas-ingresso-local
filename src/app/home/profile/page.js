@@ -52,8 +52,6 @@ export default function Profile() {
                         first_name: session?.user?.first_name,
                         last_name: session?.user?.last_name,
                         address1: cliente?.address1 || "",
-                        address2: cliente?.address2 || "",
-                        address3: cliente?.address3 || "",
                         city: cliente?.city || "",
                         state: cliente?.state || "",
                         cep: cliente?.cep || "",
@@ -109,7 +107,6 @@ export default function Profile() {
                         ...preloadedValues,
                         cep: address.cep,
                         address1: address.logradouro,
-                        address2: address.bairro,
                         city: address.localidade,
                         state: address.uf,
                     });

@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const _products = [
+/*const _products = [
     {
         id: 1,
         name: 'Organize Basic Set (Walnut)',
@@ -91,7 +91,7 @@ const _products = [
         href: '#',
     },    
     // More products...
-]
+]*/
 
 export default function Home() {
 
