@@ -53,8 +53,8 @@ export default function Register() {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto h-10 w-auto"
-            src="https://ufr.edu.br/protic/wp-content/themes/ufr/assets/img/logo/ufr-wide.png"
-            alt="UFR"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhPEmAE3adrAln8LQ00mLxwrb_2w4yVq5ALbys95Tg&s"
+            alt="SoIngresos"
           />
           <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Crie sua conta
@@ -73,7 +73,7 @@ export default function Register() {
                     {...register("email")}
                     type="text"
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
                   />
                 </div>
                 {errors.email && <p className="mt-2 text-sm text-red-600" id="email-error">{errors.email.message}</p>}
@@ -90,7 +90,7 @@ export default function Register() {
                       {...register("first_name")}
                       type="text"
                       autoComplete="first_name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                   {errors.first_name && <p className="mt-2 text-sm text-red-600" id="first_name-error">{errors.first_name.message}</p>}
@@ -105,7 +105,7 @@ export default function Register() {
                       {...register("last_name")}
                       type="text"
                       autoComplete="last_name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                   {errors.last_name && <p className="mt-2 text-sm text-red-600" id="last_name-error">{errors.last_name.message}</p>}
@@ -121,7 +121,7 @@ export default function Register() {
                     {...register("password")}
                     type="password"
                     autoComplete="current-password"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
                   />
                 </div>
                 {errors.password && <p className="mt-2 text-sm text-red-600" id="password-error">{errors.password.message}</p>}
@@ -136,7 +136,7 @@ export default function Register() {
                     {...register("confirmPassword")}
                     type="password"
                     autoComplete="current-password"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
                   />
                 </div>
                 {errors.confirmPassword && <p className="mt-2 text-sm text-red-600" id="confirmPassword-error">{errors.confirmPassword.message}</p>}
@@ -147,7 +147,7 @@ export default function Register() {
                 </div>
 
                 <div className="text-sm leading-6">
-                  <Link href="/auth/signin" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <Link href="/auth/signin" className="font-semibold text-pink-600 hover:text-pink-500">
                     Já tenho cadastro
                   </Link>
                 </div>
@@ -156,7 +156,7 @@ export default function Register() {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-pink-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600"
                 >
                   Cadastrar
                 </button>
